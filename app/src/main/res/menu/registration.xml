@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RegisterActivity" >
+    <item
+        android:id="@+id/clear"
+        android:title="@string/clear"
+        android:orderInCategory="100"
+        app:showAsAction="always">
+    </item>
+</menu>
