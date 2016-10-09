@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -52,8 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    protected void attemptLogin()
-    {
+    protected void attemptLogin() {
         userInput.setError(null);
         passwordInput.setError(null);
 
@@ -95,5 +96,21 @@ public class LoginActivity extends AppCompatActivity {
 
     protected boolean isValidPassword(String pass) {
         return pass.length() >= 4;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.login, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if(id == R.id.exit) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
